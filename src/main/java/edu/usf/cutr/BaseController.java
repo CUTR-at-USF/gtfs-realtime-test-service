@@ -44,10 +44,7 @@ public abstract class BaseController {
 
 	protected void createStaticProtoBufFile(HttpServletResponse response,
 			String filename) throws IOException {
-		
-		ClassLoader classLoader = getClass().getClassLoader();
-		File downloadFile = new File(classLoader.getResource(filename)
-				.getFile());
+		File downloadFile = new File(filename);
 
 		FileInputStream inputStream = new FileInputStream(downloadFile);
 
