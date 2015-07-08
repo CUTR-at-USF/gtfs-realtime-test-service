@@ -1,6 +1,20 @@
+/*
+ * Copyright (C) 2015 University of South Florida (cagricetin@mail.usf.edu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package edu.usf.cutr;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
@@ -26,6 +40,9 @@ public class HomeController extends BaseController {
 	@Autowired
 	private IOManager ioManager;
 	
+	/**
+	 * Returns trip-updates in protocol buffer format
+	 */
 	@RequestMapping(value = "/trip-updates.do", method = RequestMethod.GET)
 	public void tripUdates(HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -37,6 +54,9 @@ public class HomeController extends BaseController {
 		}
 	}
 
+	/**
+	 * Returns vehicle-positions in protocol buffer format
+	 */
 	@RequestMapping(value = "/vehicle-positions.do", method = RequestMethod.GET)
 	public void vehiclePositions(HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -48,6 +68,9 @@ public class HomeController extends BaseController {
 		}
 	}
 
+	/**
+	 * Updates original gtfs-rt files 
+	 */
 	@RequestMapping(value = "/update-files.do", method = RequestMethod.GET)
 	public void updateFiles(HttpServletRequest request, HttpServletResponse response) {
 		try {
